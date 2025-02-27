@@ -5,7 +5,7 @@ import ScrollProgress from "./components/ScrollProgress";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
-import Contact from "./components/contact";
+import Contact from "./components/Contact.jsx";
 import { useScroll } from "motion/react";
 
 function App() {
