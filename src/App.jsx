@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import Card from "./components/Card";
 import Nav from "./components/Nav";
 import ScrollProgress from "./components/ScrollProgress";
@@ -6,9 +6,16 @@ import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact.jsx";
-import { useScroll } from "motion/react";
+import BlinkingLoader from "./components/Loader.jsx";
 
 function App() {
+  const [loader, setLoader] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 2000);
+  }, []);
+
   useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll({
       smooth: true,
@@ -19,23 +26,37 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (location.pathname === "/" || "/tools" || "/project" || "/experience") {
+      setLoader(true);
+      setTimeout(() => setLoader(false), 2000);
+    }
+  }, [location.pathname]);
+
   return (
-    <main className="bg-[#151312] flex w-full flex-col text-white justify-center items-center ">
-      <ScrollProgress />
-      <div className="flex w-full flex-col-reverse md:flex-col text-white justify-center items-center">
-        <Nav />
-        <section className="w-full lg:w-fit flex-col xl:flex-row flex px-4 lg:px-0">
-          {/* Custom Cursor */}
-          <CustomCursor />
-          <Card />
-          <div className="lg:pl-12">
-            <Outlet />
-            <Contact />
-          </div>
-        </section>
-      </div>
-      <Footer />
-    </main>
+    <>
+      {loader && <BlinkingLoader />}
+      <main
+        className={`${
+          loader ? "hidden" : "block"
+        } bg-[#151312] flex w-full flex-col text-white justify-center items-center `}
+      >
+        <ScrollProgress />
+        <div className="flex w-full flex-col-reverse md:flex-col text-white justify-center items-center">
+          <Nav />
+          <section className="w-full lg:w-fit flex-col xl:flex-row flex px-4 lg:px-0">
+            {/* Custom Cursor */}
+            <CustomCursor />
+            <Card />
+            <div className={`lg:pl-12 `}>
+              <Outlet />
+              <Contact />
+            </div>
+          </section>
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }
 export default App;
@@ -66,7 +87,7 @@ export const CustomCursor = () => {
   useEffect(() => {
     const updatePosition = () => {
       setCursorPos((prev) => ({
-        x: prev.x + (targetPos.x - prev.x) * 0.1, // Smooth transition
+        x: prev.x + (targetPos.x - prev.x) * 0.1,
         y: prev.y + (targetPos.y - prev.y) * 0.1,
         type: prev.type,
       }));
