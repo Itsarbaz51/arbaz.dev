@@ -107,7 +107,7 @@ function Hero() {
           {
             id: 3,
             title: "Todo List API with Authentication",
-            img: "https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZyUyMHdlYnxlbnwwfHwwfHx8MA%3D%3D",
+            img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBpfGVufDB8fDB8fHww",
             tagLine:
               "Developed a secure RESTful API using Express.js, MongoDB, and NodeMailer for authentication and email notifications.",
             link: "#",
