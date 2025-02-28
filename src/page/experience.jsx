@@ -15,7 +15,7 @@ function Experience() {
             role: "Front-End Developer (Intern) | MD WebSoft | 45 Days.",
             tagLine:
               "Developed the Kingfish Logistics website using React and Tailwind CSS, ensuring a responsive and visually appealing UI. Worked on bug fixing, optimization, and Git version control while collaborating with the team to meet project deadlines. 🚀",
-            link: "#",
+            link: "https://www.kingfishlogistics.in/",
             time: "45 Days Internship",
           },
           {
