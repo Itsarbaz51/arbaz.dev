@@ -29,7 +29,7 @@ export const projectData = [
     img: "/project/jewellers.jpg",
     tagLine:
       "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://www.jewellerydummy.vercel.app",
+      link: "https://jewelry-orpin.vercel.app/",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const projectData = [
     img: "/project/qitchen.jpg",
     tagLine:
       "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://www.qitechendummy.vercel.app",
+      link: "https://qitchendummy.vercel.app/",
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ export const expreienceData = [
     role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
     tagLine:
       "Designed and developed responsive front-end interfaces for Jewellery businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://www.jewellerydummy.vercel.app",
+    link: "https://jewelry-orpin.vercel.app/",
   },
   {
     id: 5,
@@ -95,7 +95,7 @@ export const expreienceData = [
     role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
     tagLine:
       "Designed and developed responsive front-end interfaces for Kitchen businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://www.qitechendummy.vercel.app",
+    link: "https://qitchendummy.vercel.app/",
   },
   {
     id: 6,
