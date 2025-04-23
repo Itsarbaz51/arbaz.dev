@@ -5,6 +5,7 @@ import { FiLayers, FiLayout } from "react-icons/fi";
 import { motion } from "motion/react";
 import Ept from "./Ept";
 import { Link } from "react-router-dom";
+import { expreienceData, projectData, toolsData } from "../dummyData/data";
 
 function Hero() {
   return (
@@ -88,98 +89,102 @@ function Hero() {
       </div>
       <Ept
         // project
-        projectData={[
-          // {
-          //   id: 1,
-          //   title: "Kingfish logistic",
-          //   img: "https://portfolio-01-kappa.vercel.app/_next/image?url=%2Fkingfish.png&w=1200&q=75",
-          //   tagLine: "using tools React, Tailwind CSS with Responsive.",
-          //   link: "https://www.kingfishlogistics.in",
-          // },
-          {
-            id: 2,
-            title: "Blog Website",
-            img: "https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZyUyMHdlYnxlbnwwfHwwfHx8MA%3D%3D",
-            tagLine:
-              "Built with MERN Stack, Redux Toolkit, and Tailwind CSS. Fully responsive design with authentication and content management.",
-            link: "#",
-          },
-          {
-            id: 3,
-            title: "Todo List API with Authentication",
-            img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBpfGVufDB8fDB8fHww",
-            tagLine:
-              "Developed a secure RESTful API using Express.js, MongoDB, and NodeMailer for authentication and email notifications.",
-            link: "#",
-          },
-        ]}
+        // projectData={[
+        //   // {
+        //   //   id: 1,
+        //   //   title: "Kingfish logistic",
+        //   //   img: "https://portfolio-01-kappa.vercel.app/_next/image?url=%2Fkingfish.png&w=1200&q=75",
+        //   //   tagLine: "using tools React, Tailwind CSS with Responsive.",
+        //   //   link: "https://www.kingfishlogistics.in",
+        //   // },
+        //   {
+        //     id: 2,
+        //     title: "Blog Website",
+        //     img: "https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZyUyMHdlYnxlbnwwfHwwfHx8MA%3D%3D",
+        //     tagLine:
+        //       "Built with MERN Stack, Redux Toolkit, and Tailwind CSS. Fully responsive design with authentication and content management.",
+        //     link: "#",
+        //   },
+        //   {
+        //     id: 3,
+        //     title: "Todo List API with Authentication",
+        //     img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBpfGVufDB8fDB8fHww",
+        //     tagLine:
+        //       "Developed a secure RESTful API using Express.js, MongoDB, and NodeMailer for authentication and email notifications.",
+        //     link: "#",
+        //   },
+        // ]}
+        projectData={projectData}
       />
       <Ept
         // expreience
-        projectData={[
-          {
-            id: 1,
-            title: "Kingfish Logistics",
-            companyName: "MD WebSoft",
-            companyLocation: "Jhotwara, Jaipur (Raj.), India",
-            role: "Front-End Developer (Intern) | MD WebSoft | 45 Days.",
-            tagLine:
-              "Developed the Kingfish Logistics website using React and Tailwind CSS, ensuring a responsive and visually appealing UI. Worked on bug fixing, optimization, and Git version control while collaborating with the team to meet project deadlines. 🚀",
-            link: "https://www.kingfishlogistics.in/",
-            time: "45 Days Internship",
-          },
-          {
-            id: 2,
-            title: "Todo List API with Authentication",
-            companyName: "Project Experience",
-            role: "Backend Developer",
-            tagLine:
-              "Developed a secure RESTful API using Express.js, MongoDB, and Nodemailer for authentication and email notifications. Implemented JWT-based authentication, user management, and task operations.",
-            link: "#",
-          },
-          {
-            id: 3,
-            title: "Blog Web Application",
-            companyName: "Project Experience",
-            role: "Full-Stack Developer",
-            tagLine:
-              "Developed a fully responsive blog website with a modern UI/UX. Implemented user authentication, content management, and interactive features using React, Node.js, Express.js, and MongoDB.",
-            link: "#",
-          },
-        ]}
+        // projectData={[
+        //   {
+        //     id: 1,
+        //     title: "Kingfish Logistics",
+        //     companyName: "MD WebSoft",
+        //     companyLocation: "Jhotwara, Jaipur (Raj.), India",
+        //     role: "Front-End Developer (Intern) | MD WebSoft | 45 Days.",
+        //     tagLine:
+        //       "Developed the Kingfish Logistics website using React and Tailwind CSS, ensuring a responsive and visually appealing UI. Worked on bug fixing, optimization, and Git version control while collaborating with the team to meet project deadlines. 🚀",
+        //     link: "https://www.kingfishlogistics.in/",
+        //     time: "45 Days Internship",
+        //   },
+        //   {
+        //     id: 2,
+        //     title: "Todo List API with Authentication",
+        //     companyName: "Project Experience",
+        //     role: "Backend Developer",
+        //     tagLine:
+        //       "Developed a secure RESTful API using Express.js, MongoDB, and Nodemailer for authentication and email notifications. Implemented JWT-based authentication, user management, and task operations.",
+        //     link: "#",
+        //   },
+        //   {
+        //     id: 3,
+        //     title: "Blog Web Application",
+        //     companyName: "Project Experience",
+        //     role: "Full-Stack Developer",
+        //     tagLine:
+        //       "Developed a fully responsive blog website with a modern UI/UX. Implemented user authentication, content management, and interactive features using React, Node.js, Express.js, and MongoDB.",
+        //     link: "#",
+        //   },
+        // ]}
+        projectData={expreienceData}
       />
       <Ept
         // tools
-        projectData={[
-          {
-            id: 1,
-            title: "Tailwind CSS",
-            tagLine: "CSS Framework",
-            toolImg: "/tools/tailwind.jpg",
-            link: "#",
-          },
-          {
-            id: 2,
-            title: "React.js",
-            tagLine: "JavaScript Library",
-            toolImg: "/tools/react.png",
-            link: "#",
-          },
-          {
-            id: 3,
-            title: "Figma",
-            tagLine: "Design Tool",
-            toolImg: "/tools/figma.avif",
-            link: "#",
-          },
-          {
-            id: 4,
-            title: "HTML",
-            tagLine: "Markup Language",
-            toolImg: "/tools/html.jpg",
-            link: "#",
-          },
-        ]}
+        // projectData={[
+        //   {
+        //     id: 1,
+        //     title: "Tailwind CSS",
+        //     tagLine: "CSS Framework",
+        //     toolImg: "/tools/tailwind.jpg",
+        //     link: "#",
+        //   },
+        //   {
+        //     id: 2,
+        //     title: "React.js",
+        //     tagLine: "JavaScript Library",
+        //     toolImg: "/tools/react.png",
+        //     link: "#",
+        //   },
+        //   {
+        //     id: 3,
+        //     title: "Figma",
+        //     tagLine: "Design Tool",
+        //     toolImg: "/tools/figma.avif",
+        //     link: "#",
+        //   },
+        //   {
+        //     id: 4,
+        //     title: "HTML",
+        //     tagLine: "Markup Language",
+        //     toolImg: "/tools/html.jpg",
+        //     link: "#",
+        //   },
+        // ]}
+        // pro
+      projectData={toolsData}
       />
     </div>
   );

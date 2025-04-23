@@ -1,12 +1,10 @@
 import React from "react";
-import { GoHome } from "react-icons/go";
-import { MdWorkOutline } from "react-icons/md";
-import { GoFileDirectory } from "react-icons/go";
-import { RxResume } from 'react-icons/rx';
 import { LiaEdit } from "react-icons/lia";
-import { TbTool } from "react-icons/tb";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { AiOutlineHome } from "react-icons/ai";
+import { HiOutlineDocumentText, HiOutlineFolderOpen } from "react-icons/hi2";
+import { LuBrain, LuBriefcase } from "react-icons/lu";
 
 function Nav() {
   return (
@@ -18,12 +16,12 @@ function Nav() {
     >
       <motion.ul className="flex items-center justify-center space-x-[33px] px-[21px] w-fit lg:bg-[#FFFFFF] lg:bg-opacity-5 bg-[#F46C38] text-[#FFFFFF] lg:my-7 my-2 rounded-2xl py-3 relative ">
         {[
-          { icon: GoHome, name: "Home", path: "/" },
-          { icon: GoFileDirectory, name: "Project", path: "/project" },
-          { icon: MdWorkOutline, name: "Experience", path: "/experience" },
-          { icon: TbTool, name: "Tools", path: "/tools" },
+          { icon: AiOutlineHome , name: "Home", path: "/" },
+          { icon: HiOutlineFolderOpen , name: "Project", path: "/project" },
+          { icon: LuBriefcase , name: "Experience", path: "/experience" },
+          { icon: LuBrain , name: "Tools", path: "/tools" },
+          { icon: HiOutlineDocumentText, name: "Resume", path: "/ArbazResume.pdf", newTab: true },
           // { icon: LiaEdit, name: "Edit", path: "/edit" },
-          { icon: RxResume, name: "Resume", path: "/ArbazResume.pdf", newTab: true },
         ].map(({ icon: Icon, name, path , newTab}, index) => (
           <Link to={path} key={index} target={newTab ? "_blank" : "_self"}>
             <motion.li
