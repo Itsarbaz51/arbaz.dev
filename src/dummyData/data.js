@@ -13,7 +13,7 @@ export const projectData = [
     img: "/project/cafe.jpg",
     tagLine:
       "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://www.cafedummy.vercel.app",
+      link: "https://cafedummy.vercel.app",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const projectData = [
     img: "/project/gym.jpg",
     tagLine:
       "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://www.gymdummy.vercel.app",
+      link: "https://gymdummy.vercel.app",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const projectData = [
     img: "/project/salon.png",
     tagLine:
       "using tools React, Tailwind CSS and gsap for animation with Responsive.",
-      link: "https://www.salondummy.vercel.app",
+      link: "https://salondummy.vercel.app",
   },
 ];
 // expreience
@@ -68,7 +68,7 @@ export const expreienceData = [
     role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
     tagLine:
       "Designed and developed responsive front-end interfaces for Cafe businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://www.cafedummy.vercel.app",
+    link: "https://cafedummy.vercel.app",
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ export const expreienceData = [
     role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
     tagLine:
       "Designed and developed responsive front-end interfaces for Gym businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://www.gymdummy.vercel.app",
+    link: "https://gymdummy.vercel.app",
   },
   {
     id: 4,
