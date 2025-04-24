@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     if (location.pathname === "/" || "/tools" || "/project" || "/experience") {
       setLoader(true);
-      setTimeout(() => setLoader(false), 2000);
+      setTimeout(() => setLoader(false), 1000);
     }
   }, [location.pathname]);
 
