@@ -124,7 +124,7 @@ function Ept({ projectData }) {
                   </p>
                 )}
 
-                {img &&<button className="bg-white hover:bg-white/90 text-black px-2 py-1 w-full mt-6 rounded-sm sm:hidden">View Live Project</button>}
+                {img &&<button className="bg-white hover:bg-white/90 text-black px-2 py-1 w-full mt-6 rounded-sm sm:hidden"><Link to={link}>View Live Project</Link></button>}
               </div>
             </motion.div>
           )
