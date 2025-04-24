@@ -47,6 +47,14 @@ export const projectData = [
       "using tools React, Tailwind CSS and gsap for animation with Responsive.",
       link: "https://salondummy.vercel.app",
   },
+  {
+    id: 7,
+    title: "Dental",
+    img: "/project/dental.jpg",
+    tagLine:
+      "using tools React, Tailwind CSS and gsap for animation with Responsive.",
+      link: "https://dainteldummy.vercel.app/",
+  },
 ];
 // expreience
 export const expreienceData = [

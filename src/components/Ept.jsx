@@ -91,11 +91,15 @@ function Ept({ projectData }) {
               <div className={`w-full px-4 relative my-4 sm:my-0`}>
                 {!toolImg && (
                   <div className="absolute right-4 justify-self-end hover:scale-150 duration-700 max-w-fit hidden md:block">
+                    <Link
+                    to={link}
+                    target="_blank">
                     <span className="absolute right-5 flex size-3 z-10">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#C5FF41] opacity-75"></span>
                       <span className="relative inline-flex size-3 rounded-full bg-[#C5FF41]"></span>
                     </span>
                     <IoIosArrowRoundForward className="-rotate-45 text-[2rem] bg-[#F46C38] rounded-full" />
+                  </Link>
                   </div>
                 )}
                 <h4
@@ -119,6 +123,8 @@ function Ept({ projectData }) {
                     {time}
                   </p>
                 )}
+
+                {img &&<button className="bg-white hover:bg-white/90 text-black px-2 py-1 w-full mt-6 rounded-sm sm:hidden">View Live Project</button>}
               </div>
             </motion.div>
           )
