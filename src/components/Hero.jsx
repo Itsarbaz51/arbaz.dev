@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import Ept from "./Ept";
 import { Link } from "react-router-dom";
 import { expreienceData, projectData, toolsData } from "../dummyData/data";
+import WhatsappButton from "./WhatsappButton";
 
 function Hero() {
   return (
@@ -186,6 +187,7 @@ function Hero() {
         // pro
       projectData={toolsData}
       />
+      <WhatsappButton /> 
     </div>
   );
 }
