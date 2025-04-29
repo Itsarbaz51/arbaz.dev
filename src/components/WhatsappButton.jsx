@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsappButton = () => {
   return (
@@ -13,10 +14,7 @@ const WhatsappButton = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <img 
-        src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png" 
-        alt="WhatsApp" 
-      />
+     <FaWhatsapp/>
     </motion.a>
   );
 };
