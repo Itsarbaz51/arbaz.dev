@@ -14,7 +14,7 @@ const WhatsappButton = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-     <FaWhatsapp/>
+             <FaWhatsapp size={28} color="white" />
     </motion.a>
   );
 };
