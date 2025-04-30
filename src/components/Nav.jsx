@@ -20,7 +20,7 @@ function Nav() {
           { icon: HiOutlineFolderOpen , name: "Project", path: "/project" },
           { icon: LuBriefcase , name: "Experience", path: "/experience" },
           { icon: LuBrain , name: "Tools", path: "/tools" },
-          { icon: HiOutlineDocumentText, name: "Resume", path: "/ArbazResume.pdf", newTab: true },
+          { icon: HiOutlineDocumentText, name: "Resume", path: "/ARBAZCV.pdf", newTab: true },
           // { icon: LiaEdit, name: "Edit", path: "/edit" },
         ].map(({ icon: Icon, name, path , newTab}, index) => (
           <Link to={path} key={index} target={newTab ? "_blank" : "_self"}>
