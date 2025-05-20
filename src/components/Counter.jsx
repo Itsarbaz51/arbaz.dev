@@ -9,7 +9,7 @@ function Counter() {
   const [roundedProject, setRoundedProject] = useState(0);
 
   useEffect(() => {
-    const controls = animate(count, 365, { duration: 1 });
+    const controls = animate(count, 90, { duration: 1 });
     const controlsProject = animate(countProject, 2, { duration: 1 });
 
     const update = () => setRounded(Math.round(count.get()));
