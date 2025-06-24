@@ -17,7 +17,7 @@ function Ept({ projectData }) {
         transition={{ duration: 0.2, delay: 0.2 }}
         className="text-[3.5rem] lg:text-[4rem] font-bold max-w-[800px] text-center lg:text-start leading-none my-10 md:my-20 xl:w-fit"
       >
-        {img ? "RECENT" : time ? "45 DAY'S OF" : toolImg ? "PREMIUM" : ""}
+        {img ? "RECENT" : time ? "90 DAY'S OF" : toolImg ? "PREMIUM" : ""}
         <br />
         <motion.li className="text-[#474649] list-none">
           {img ? "PROJECTS" : time ? "EXPERIENCE" : toolImg ? "TOOLS" : ""}
