@@ -63,11 +63,11 @@ export const expreienceData = [
     title: "Kingfish Logistics",
     companyName: "MD WebSoft",
     companyLocation: "Jhotwara, Jaipur (Raj.), India",
-    role: "Front-End Developer (Intern) | MD WebSoft | 45 Days.",
+    role: "Front-End Developer (Intern) | MD WebSoft | 90 Days.",
     tagLine:
       "Developed the Kingfish Logistics website using React and Tailwind CSS, ensuring a responsive and visually appealing UI. Worked on bug fixing, optimization, and Git version control while collaborating with the team to meet project deadlines. 🚀",
     link: "https://www.mdwebsoft.com/",
-    time: "45 Days Internship",
+    time: "90 Days Internship",
   },
   {
     id: 2,
