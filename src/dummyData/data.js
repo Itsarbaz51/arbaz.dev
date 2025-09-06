@@ -23,22 +23,22 @@ export const projectData = [
       "using tools React, Tailwind CSS and motion for animation with Responsive.",
       link: "https://gymdummy.vercel.app",
   },
-  {
-    id: 4,
-    title: "Jewellery",
-    img: "/project/jewellers.jpg",
-    tagLine:
-      "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://jewelry-orpin.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Qitechen",
-    img: "/project/qitchen.jpg",
-    tagLine:
-      "using tools React, Tailwind CSS and motion for animation with Responsive.",
-      link: "https://qitchendummy.vercel.app/",
-  },
+  // {
+  //   id: 4,
+  //   title: "Jewellery",
+  //   img: "/project/jewellers.jpg",
+  //   tagLine:
+  //     "using tools React, Tailwind CSS and motion for animation with Responsive.",
+  //     link: "https://jewelry-orpin.vercel.app/",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Qitechen",
+  //   img: "/project/qitchen.jpg",
+  //   tagLine:
+  //     "using tools React, Tailwind CSS and motion for animation with Responsive.",
+  //     link: "https://qitchendummy.vercel.app/",
+  // },
   {
     id: 6,
     title: "Salon",
@@ -87,24 +87,24 @@ export const expreienceData = [
       "Designed and developed responsive front-end interfaces for Gym businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
     link: "https://gymdummy.vercel.app",
   },
-  {
-    id: 4,
-    title: "Jewellery",
-    companyName: "Project Experience",
-    role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
-    tagLine:
-      "Designed and developed responsive front-end interfaces for Jewellery businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://jewelry-orpin.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Qitechen",
-    companyName: "Project Experience",
-    role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
-    tagLine:
-      "Designed and developed responsive front-end interfaces for Kitchen businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
-    link: "https://qitchendummy.vercel.app/",
-  },
+  // {
+  //   id: 4,
+  //   title: "Jewellery",
+  //   companyName: "Project Experience",
+  //   role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
+  //   tagLine:
+  //     "Designed and developed responsive front-end interfaces for Jewellery businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
+  //   link: "https://jewelry-orpin.vercel.app/",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Qitechen",
+  //   companyName: "Project Experience",
+  //   role: "Front-End Developer | Tools Using Motion, React and Tailwind CSS",
+  //   tagLine:
+  //     "Designed and developed responsive front-end interfaces for Kitchen businesses using React.js and Tailwind CSS. Focused on modern UI/UX, seamless navigation, and optimized performance for various screen sizes.",
+  //   link: "https://qitchendummy.vercel.app/",
+  // },
   {
     id: 6,
     title: "Salon",
