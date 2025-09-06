@@ -32,10 +32,11 @@ function Counter() {
       <motion.div>
         <motion.pre className="text-5xl font-semibold relative">
           +{rounded}
-          <motion.sup className="text-sm absolute">Internship</motion.sup>
+          <motion.sup className="text-sm absolute">parsent</motion.sup>
         </motion.pre>
         <motion.span className="text-[#818181] text-[1.2rem]">
-          DAY'S OF <br /> EXPERIENCE
+         azzunique
+          OF <br /> EXPERIENCE
         </motion.span>
       </motion.div>
       <motion.div>
