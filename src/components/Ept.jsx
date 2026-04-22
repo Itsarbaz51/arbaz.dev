@@ -1,135 +1,120 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
-function Ept({ projectData }) {
-  const { img, time, toolImg } = projectData[0];
-
-  const locationPath = useLocation().pathname;
+function Ept({ projectData, variant }) {
+  const [selected, setSelected] = useState(null);
+  const heading =
+    variant === "project"
+      ? "Projects"
+      : variant === "experience"
+        ? "Experience"
+        : "Tech Stack";
 
   return (
-    <div>
-      <motion.h1
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.2, delay: 0.2 }}
-        className="text-[3.5rem] lg:text-[4rem] font-bold max-w-[800px] text-center lg:text-start leading-none my-10 md:my-20 xl:w-fit"
-      >
-        {img ? "RECENT" : time ? "peresnt azzunique OF" : toolImg ? "PREMIUM" : ""}
-        <br />
-        <motion.li className="text-[#474649] list-none">
-          {img ? "PROJECTS" : time ? "EXPERIENCE" : toolImg ? "TOOLS" : ""}
-        </motion.li>
-      </motion.h1>
-      <div
-        className={` ${
-          toolImg && "grid grid-cols-1 md:grid-cols-2 justify-between gap-6"
-        } `}
-      >
-        {projectData.map(
-          (
-            {
-              img,
-              title,
-              tagLine,
-              link,
-              time,
-              toolImg,
-              companyName,
-              companyLocation,
-              role,
-            },
-            index
-          ) => (
-            <motion.div
-              initial={{ opacity: 0, scale: 1 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              key={title + index}
-              className={`flex w-full sm:justify-start relative group sm:items-start shadow-2xl bg-white/5 lg:hover:bg-white/10 p-5 rounded-3xl  duration-700 my-5 ${
-                time && "py-5 lg:py-4 px-2 lg:px-1"
-              } ${
-                toolImg &&
-                "justify-center items-center px-6 py-2 md:py-4 md:my-3 my-2"
-              } ${img && "flex-col sm:flex-row justify-center items-center"}
-                ${companyName && "flex-col-reverse sm:flex-row"} 
-                `}
+    <div className="my-20 w-full max-w-[1200px] mx-auto px-4">
+      {/* 🔥 HEADING */}
+      <h1 className="text-3xl lg:text-5xl font-bold mb-12 text-center lg:text-left">
+        {heading}
+      </h1>
+
+      {/* 🔥 PROJECTS */}
+      {variant === "project" && (
+        <div className="grid sm:grid-cols-2 xl:grid-cols-2 gap-6">
+          {projectData.map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition"
             >
-              {companyName && (
-                <span className="lg:absolute text-[1.2rem] p-3 lg:opacity-0 lg:group-hover:opacity-100 text-white lg:text-sm font-semibold flex flex-col right-2 bottom-2">
-                  {companyName === "Project Experience" ? "" : "Company:"}{" "}
-                  {companyName}
-                  <span>
-                      {companyLocation && "Location:"} {companyLocation}
-                  </span>
-                </span>
-              )}
+              <img
+                src={item.img}
+                className="rounded-xl mb-4 w-full h-[180px] object-cover"
+              />
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p
+                className="text-gray-400 text-sm mt-2 line-clamp-2"
+                onClick={() => setSelected(item)}
+              >
+                {item.tagLine}
+              </p>{" "}
+            </div>
+          ))}
+        </div>
+      )}
 
-              {img && (
-                <Link
-                  to={link}
-                  target="_blank"
-                  className="w-full h-full sm:w-[200px] sm:h-[8rem]"
-                >
-                  <img
-                    src={img}
-                    alt={title}
-                    className="w-full object-contain bg-center h-full rounded-xl"
-                  />
-                </Link>
-              )}
-              {toolImg && (
-                <img
-                  src={toolImg}
-                  alt={title}
-                  className="size-16 object-cover rounded-xl"
-                />
-              )}
-              <div className={`w-full px-4 relative my-4 sm:my-0`}>
-                {!toolImg && (
-                  <div className="absolute right-4 justify-self-end hover:scale-150 duration-700 max-w-fit hidden md:block">
-                    <Link
-                    to={link}
-                    target="_blank">
-                    <span className="absolute right-5 flex size-3 z-10">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#C5FF41] opacity-75"></span>
-                      <span className="relative inline-flex size-3 rounded-full bg-[#C5FF41]"></span>
-                    </span>
-                    <IoIosArrowRoundForward className="-rotate-45 text-[2rem] bg-[#F46C38] rounded-full" />
-                  </Link>
-                  </div>
-                )}
-                <h4
-                  className={`font-bold lg:text-[2rem] text-[1.8rem] xl:w-fit`}
-                >
-                  {title}
-                </h4>
-                {role && <h5 className="pt-2 pb-1">
-                  <Link className="cursor-pointer" to={link}>{role}</Link></h5>}
-                <p
-                  className={`text-[#818181] w-full  sm:leading-none sm:max-w-[550px] text-[1rem] xl:w-fit ${
-                    time && "w-full"
-                  }`}
-                >
-                  {tagLine}
-                </p>
-                {time && (
-                  <p
-                    className={`text-[#818181] max-w-[550px] text-[1.3rem] md:mt-4 mt-2 `}
-                  >
-                    {time}
-                  </p>
-                )}
+      {/* 🔥 EXPERIENCE (CENTER FIXED) */}
+      {variant === "experience" && (
+        <div className="relative max-w-[800px] mx-auto">
+          {/* line center */}
+          <div className="absolute left-2 top-0 bottom-0 w-[2px] bg-white/20"></div>
 
-                {img &&<Link to={link} className="bg-white inline-block text-center hover:bg-white/90 text-black px-2 py-1 w-full mt-6 rounded-sm sm:hidden">View Live Project</Link>}
+          <div className="flex flex-col gap-8 pl-8">
+            {projectData.map((item, i) => (
+              <div key={i} className="relative">
+                {/* dot */}
+                <div className="absolute -left-[18px] top-2 w-3 h-3 bg-[#F46C38] rounded-full"></div>
+
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="text-sm text-[#F46C38]">{item.role}</p>
+                <p className="text-xs text-gray-400">{item.companyName}</p>
+                <p className="text-gray-400 text-sm mt-2">{item.tagLine}</p>
               </div>
-            </motion.div>
-          )
-        )}
-      </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 🔥 TOOLS (GRID FIXED) */}
+      {variant === "tools" && (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {projectData.map((item, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-3 p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition"
+            >
+              <img src={item.toolImg} className="size-8" />
+              <span className="text-sm">{item.title}</span>
+            </div>
+          ))}
+        </div>
+      )}
+      {selected && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-[#111] max-w-[600px] w-full p-6 rounded-2xl relative">
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+            >
+              ✕
+            </button>
+
+            {/* 🔥 CONTENT */}
+            <h2 className="text-2xl font-bold mb-3">{selected.title}</h2>
+
+            {selected.img && (
+              <img
+                src={selected.img}
+                className="rounded-xl mb-4 w-full h-[200px] object-cover"
+              />
+            )}
+
+            <p className="text-gray-300 text-sm leading-relaxed">
+              {selected.tagLine}
+            </p>
+
+            {selected.link && (
+              <a
+                href={selected.link}
+                target="_blank"
+                className="inline-block mt-4 text-[#F46C38]"
+              >
+                View Live →
+              </a>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -21,3 +21,16 @@ input:focus,
 textarea:focus {
   outline: #f46c38;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+/* Hide scrollbar but allow scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}

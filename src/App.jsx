@@ -1,8 +1,7 @@
-import { Outlet, useLocation, useNavigation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Card from "./components/Card";
 import Nav from "./components/Nav";
 import ScrollProgress from "./components/ScrollProgress";
-import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact.jsx";
@@ -12,114 +11,47 @@ function App() {
   const [loader, setLoader] = useState(true);
   const location = useLocation();
 
+  // 🔥 Initial Loader
   useEffect(() => {
-    setTimeout(() => setLoader(false), 2000);
+    setTimeout(() => setLoader(false), 1500);
   }, []);
 
+  // 🔥 Route Change Loader
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll({
-      smooth: true,
-    });
-
-    return () => {
-      locomotiveScroll.destroy();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (location.pathname === "/" || "/tools" || "/project" || "/experience") {
-      setLoader(true);
-      setTimeout(() => setLoader(false), 1000);
-    }
+    setLoader(true);
+    const timer = setTimeout(() => setLoader(false), 800);
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <>
       {loader && <BlinkingLoader />}
+
       <main
-        className={`${
-          loader ? "hidden" : "block"
-        } bg-[#151312] flex w-full flex-col text-white justify-center items-center `}
+        className={`${loader ? "hidden" : "block"} bg-[#151312] text-white`}
       >
         <ScrollProgress />
-        <div className="flex w-full flex-col-reverse md:flex-col text-white justify-center items-center">
-          <Nav />
-          <section className="w-full lg:w-fit flex-col xl:flex-row flex px-4 lg:px-0">
-            {/* Custom Cursor */}
-            <CustomCursor />
-            <Card />
-            <div className={`lg:pl-12 `}>
+
+        <Nav />
+
+        <section className="flex w-full h-screen overflow-hidden px-6 lg:px-20 gap-10">
+          <div className="w-[300px] flex-shrink-0 hidden lg:block">
+            <div className="sticky top-10 h-[90vh] flex items-center">
+              <Card />
+            </div>
+          </div>
+
+          <div className="flex-1 h-full overflow-y-auto pr-2 scrollbar-hide">
+            <div className="max-w-[1000px] mx-auto">
               <Outlet />
               <Contact />
+              <Footer />
             </div>
-          </section>
-        </div>
-        <Footer />
+          </div>
+        </section>
       </main>
     </>
   );
 }
+
 export default App;
-
-export const CustomCursor = () => {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0, type: "default" });
-  const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const moveCursor = (e) => {
-      let type = "default";
-
-      if (["P", "SPAN", "H4"].includes(e.target.tagName)) {
-        type = "small";
-      } else if (["H1", "H2", "H3", "LI"].includes(e.target.tagName)) {
-        type = "large";
-      }
-
-      setTargetPos({ x: e.clientX, y: e.clientY });
-      setCursorPos((prev) => ({ ...prev, type }));
-    };
-
-    document.addEventListener("mousemove", moveCursor);
-    return () => document.removeEventListener("mousemove", moveCursor);
-  }, []);
-
-  // Smooth movement effect
-  useEffect(() => {
-    const updatePosition = () => {
-      setCursorPos((prev) => ({
-        x: prev.x + (targetPos.x - prev.x) * 0.1,
-        y: prev.y + (targetPos.y - prev.y) * 0.1,
-        type: prev.type,
-      }));
-      requestAnimationFrame(updatePosition);
-    };
-
-    updatePosition();
-  }, [targetPos]);
-
-  return (
-    <div
-      className={`hidden xl:block fixed pointer-events-none transition-transform ease-out duration-700`}
-      style={{
-        left: cursorPos.x,
-        top: cursorPos.y,
-        transform: "translate(-50%, -50%)",
-        width:
-          cursorPos.type === "small"
-            ? "2px "
-            : cursorPos.type === "large"
-            ? "3px"
-            : "2.5rem",
-        height:
-          cursorPos.type === "small"
-            ? "1rem"
-            : cursorPos.type === "large"
-            ? "5rem"
-            : "2.5rem",
-        border: "2px solid red",
-        borderRadius: cursorPos.type === "default" ? "50%" : "0",
-        zIndex: 50,
-      }}
-    />
-  );
-};

@@ -64,7 +64,7 @@ function Contact() {
 
       <form
         ref={formRef}
-        className="grid grid-cols-1 max-w-full overflow-hidden p-5 space-y-4"
+        className="grid grid-cols-1 max-w-full  p-5 space-y-4"
         onSubmit={sendEmail}
       >
         <div className="grid grid-cols-2 space-x-5">
