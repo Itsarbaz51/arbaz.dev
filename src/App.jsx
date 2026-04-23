@@ -13,35 +13,40 @@ function App() {
 
   // 🔥 Initial Loader
   useEffect(() => {
-    setTimeout(() => setLoader(false), 1500);
+    const timer = setTimeout(() => setLoader(false), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
   // 🔥 Route Change Loader
   useEffect(() => {
     setLoader(true);
-    const timer = setTimeout(() => setLoader(false), 800);
+    const timer = setTimeout(() => setLoader(false), 500);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <>
-      {loader && <BlinkingLoader />}
+      {/* 🔥 Overlay Loader (DO NOT HIDE MAIN) */}
+      {loader && (
+        <div className="fixed inset-0 z-50 bg-[#151312] flex items-center justify-center">
+          <BlinkingLoader />
+        </div>
+      )}
 
-      <main
-        className={`${loader ? "hidden" : "block"} bg-[#151312] text-white`}
-      >
+      <main className="bg-[#151312] text-white flex flex-col justify-center items-center ">
         <ScrollProgress />
-
         <Nav />
 
-        <section className="flex w-full h-screen overflow-hidden px-6 lg:px-20 gap-10">
-          <div className="w-[300px] flex-shrink-0 hidden lg:block">
-            <div className="sticky top-10 h-[90vh] flex items-center">
+        <section className="flex w-full px-6 lg:px-20 gap-10">
+          {/* LEFT CARD */}
+          <div className="w-[300px] flex-shrink-0  ">
+            <div className="sm:sticky top-20 mt-24">
               <Card />
             </div>
           </div>
 
-          <div className="flex-1 h-full overflow-y-auto pr-2 scrollbar-hide">
+          {/* RIGHT CONTENT */}
+          <div className="flex-1">
             <div className="max-w-[1000px] mx-auto">
               <Outlet />
               <Contact />

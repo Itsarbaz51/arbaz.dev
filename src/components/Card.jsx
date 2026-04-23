@@ -26,8 +26,8 @@ function Card() {
   }, []);
 
   return (
-    <div className="static top-10 w-[600px]">
-      <div className="profile bg-white text-black rounded-3xl shadow-xl w-full max-w-[320px] mx-auto p-6 flex flex-col items-center">
+    <div className="static top-10 ">
+      <div className="profile bg-white text-black rounded-3xl shadow-xl p-8 min-h-[560px] flex flex-col items-center justify-between">
         <img
           src="/card/profile.png"
           alt="Profile"

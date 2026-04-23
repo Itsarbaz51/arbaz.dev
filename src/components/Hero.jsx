@@ -52,7 +52,7 @@ function Hero() {
         <motion.div
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className="bg-[#F46C38] p-6 rounded-2xl max-w-[400px]"
+          className="bg-[#F46C38] p-6 rounded-2xl w-full"
         >
           <FiServer className="text-3xl mb-4 w-fit" />
           <h3 className="text-xl font-semibold">Backend & SaaS Systems</h3>
@@ -65,7 +65,7 @@ function Hero() {
         <motion.div
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className="bg-[#C5FF41] text-black p-6 rounded-2xl max-w-[350px]"
+          className="bg-[#C5FF41] text-black p-6 rounded-2xl w-full"
         >
           <FiGlobe className="text-3xl mb-4" />
           <h3 className="text-xl font-semibold">Deployment & Production</h3>
@@ -78,7 +78,7 @@ function Hero() {
         <motion.div
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className="bg-[#151312] border p-6 rounded-2xl max-w-[400px]"
+          className="bg-[#151312] border p-6 rounded-2xl w-full"
         >
           <FiLayout className="text-3xl mb-4" />
           <h3 className="text-xl font-semibold">Frontend & UI</h3>
@@ -90,7 +90,7 @@ function Hero() {
         <motion.div
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className="bg-[#151312] border p-6 rounded-2xl max-w-[350px]"
+          className="bg-[#151312] border p-6 rounded-2xl w-full"
         >
           <FiLayers className="text-3xl mb-4" />
           <h3 className="text-xl font-semibold">Freelance Services</h3>

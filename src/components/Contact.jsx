@@ -11,7 +11,12 @@ function Contact() {
     e.preventDefault();
 
     const form = formRef.current;
-    if (!form.fullName.value || !form.email.value || !form.number.value || !form.message.value) {
+    if (
+      !form.fullName.value ||
+      !form.email.value ||
+      !form.number.value ||
+      !form.message.value
+    ) {
       setError("Please fill all fields.");
       setTimeout(() => setError(""), 2000);
       return;
@@ -24,7 +29,7 @@ function Contact() {
         import.meta.env.VITE_YOUR_SERVICE_ID,
         import.meta.env.VITE_YOUR_TEMPLATE_ID,
         form,
-        import.meta.env.VITE_YOUR_PUBLIC_KEY
+        import.meta.env.VITE_YOUR_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -37,7 +42,7 @@ function Contact() {
           console.error("Failed...", error);
           setError("Failed to send message. Try again.");
           setTimeout(() => setError(""), 2000);
-        }
+        },
       );
   };
 
@@ -67,14 +72,14 @@ function Contact() {
         className="grid grid-cols-1 max-w-full  p-5 space-y-4"
         onSubmit={sendEmail}
       >
-        <div className="grid grid-cols-2 space-x-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <motion.label htmlFor="fullName">Full Name</motion.label>
             <motion.input
               type="text"
               name="fullName"
               placeholder="Full Name"
-              className="focus:outline bg-white bg-opacity-15"
+              className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none"
               required
             />
           </div>
@@ -84,7 +89,7 @@ function Contact() {
               type="number"
               name="number"
               placeholder="Number"
-              className="focus:outline bg-white bg-opacity-15"
+              className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none"
               required
             />
           </div>
@@ -95,7 +100,7 @@ function Contact() {
             type="email"
             name="email"
             placeholder="Email"
-            className="focus:outline bg-white bg-opacity-15"
+            className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none"
             required
           />
         </div>
@@ -106,7 +111,7 @@ function Contact() {
             cols="30"
             rows="3"
             placeholder="Message..."
-            className="focus:outline bg-white bg-opacity-15"
+            className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none"
             required
           ></motion.textarea>
         </div>
@@ -117,28 +122,28 @@ function Contact() {
 
       <div className="flex flex-col items-center">
         {/* Show error message */}
-      { (
-        <motion.p
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-red-500 my-2"
-        >
-          {error}
-        </motion.p>
-      )}
+        {
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-red-500 my-2"
+          >
+            {error}
+          </motion.p>
+        }
 
-      {/* Show success message */}
-      {success && (
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-green-500 bg-white p-2 rounded-xl my-3 px-4  block w-fit"
-        >
-          SUCCESS! Message Sent.
-        </motion.span>
-      )}
+        {/* Show success message */}
+        {success && (
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-green-500 bg-white p-2 rounded-xl my-3 px-4  block w-fit"
+          >
+            SUCCESS! Message Sent.
+          </motion.span>
+        )}
       </div>
     </div>
   );
