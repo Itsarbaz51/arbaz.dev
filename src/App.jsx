@@ -11,49 +11,101 @@ function App() {
   const [loader, setLoader] = useState(true);
   const location = useLocation();
 
-  // 🔥 Initial Loader
+  // Initial Loader
   useEffect(() => {
     const timer = setTimeout(() => setLoader(false), 1200);
+
     return () => clearTimeout(timer);
   }, []);
 
-  // 🔥 Route Change Loader
+  // Route Change Loader
   useEffect(() => {
     setLoader(true);
+
     const timer = setTimeout(() => setLoader(false), 500);
+
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <>
-      {/* 🔥 Overlay Loader (DO NOT HIDE MAIN) */}
+      {/* Overlay Loader */}
       {loader && (
-        <div className="fixed inset-0 z-50 bg-[#151312] flex items-center justify-center">
+        <div className="fixed inset-0 z-[9999] bg-[#151312] flex items-center justify-center">
           <BlinkingLoader />
         </div>
       )}
 
-      <main className="bg-[#151312] text-white flex flex-col justify-center items-center ">
+      <main className="min-h-screen w-full bg-[#151312] text-white overflow-x-hidden">
         <ScrollProgress />
-        <Nav />
 
-        <section className="flex w-full px-6 lg:px-20 gap-10">
-          {/* LEFT CARD */}
-          <div className="w-[300px] flex-shrink-0  ">
-            <div className="sm:sticky top-20 mt-24">
-              <Card />
-            </div>
-          </div>
+        {/* Main Layout */}
+        <section
+          className="
+            w-full
+            max-w-[1600px]
+            mx-auto
+            px-4
+            sm:px-6
+            md:px-8
+            lg:px-12
+            xl:px-20
+            py-8
+            lg:py-12
+          "
+        >
+          <div
+            className="
+              flex
+              flex-col
+              lg:flex-row
+              gap-8
+              lg:gap-10
+              xl:gap-14
+              items-start
+            "
+          >
+            {/* LEFT CARD */}
+            <aside
+              className="
+                w-full
+                lg:w-[280px]
+                xl:w-[300px]
+                lg:flex-shrink-0
+              "
+            >
+              <div
+                className="
+                  w-full
+                  lg:sticky
+                  lg:top-10
+                "
+              >
+                <Card />
+              </div>
+            </aside>
 
-          {/* RIGHT CONTENT */}
-          <div className="flex-1">
-            <div className="max-w-[1000px] mx-auto">
-              <Outlet />
-              <Contact />
-              <Footer />
+            {/* RIGHT CONTENT */}
+            <div className="w-full min-w-0 flex-1">
+              <div
+                className="
+                  w-full
+                  max-w-[1000px]
+                  mx-auto
+                "
+              >
+                <Outlet />
+
+                <Contact />
+
+                <Footer />
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Bottom Navigation */}
+        {/* <Nav /> */}
       </main>
     </>
   );

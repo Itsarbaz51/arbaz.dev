@@ -43,6 +43,13 @@ function Hero() {
           >
             Hire Me 🚀
           </a>
+
+          <a
+            href="/ArbazKhanResume.pdf"
+            className="border px-4 py-2 rounded-lg hover:bg-white hover:text-black duration-300"
+          >
+            Resume
+          </a>
         </div>
 
         <Counter />
